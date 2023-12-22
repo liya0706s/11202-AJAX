@@ -1,50 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>學生資料管理系統</title>
-    <link rel="shortcut icon" href="#" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <!---匯入要使用的函式庫--->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>學生資料管理系統</title>
+  <link rel="shortcut icon" href="#" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <!---匯入要使用的函式庫--->
 
 
 </head>
+
 <body>
   <h1 class="header">學生資料管理系統</h1>
-
-  
+  <div>
+    <div class="sex">
+      <button class="btn btn-primary" onclick="query('sex',1)"></button>
+      <button class="btn btn-warning" onclick="query('sex',2)"></button>
+    </div>
+    <div class="class">
+      <button class="btn btn" onclick="query('')"></button>
+    </div>
+  </div>
+  <div class="users"></div>
 </body>
+
 </html>
 <script>
-/************************************
-* 1.考慮觸發行為的事件
-* 2.建立監聽行為
-* 3.考慮是否需要代入參數
-* 4.是否會有回傳值？回傳值的功用及處理？
-* 5.是否需要更新畫面內容？更新畫面的方法？
-************************************/
+  /************************************
+  * 1.考慮觸發行為的事件
+  * 2.建立監聽行為
+  * 3.考慮是否需要代入參數
+  * 4.是否會有回傳值？回傳值的功用及處理？
+  * 5.是否需要更新畫面內容？更新畫面的方法？
+  ************************************/
 
 
-//新增資料的函式
-function create(){
+  //新增資料的函式
+  function create() {
 
-}
+  }
 
-//查詢資料的函式
-function query(){
+  // 可以先放假資料
+  let stu = { name: dfajdlkaj };
+  //查詢資料的函式
+  function queryAll() {
+    $.get("./api/query.php?do=all", (users) => {
 
-}
+      user_layout = `<div class='user'>
+<div>姓名:${user.name}</div>
+<div>生日:${user.birthday}</div>
+<div>身分證:${user.user_id}</div>
+<div>學號:${user.school_num}</div>
 
-//編輯資料的函式
-function update(){
+  </div>`
+      users.forEach((user, idx) => {
 
-}
+      })
+      console.log(users);
 
-//刪除資料的函式
-function del(){
+    })
+  }
 
-}
+  //編輯資料的函式
+  function update() {
+
+  }
+
+  //刪除資料的函式
+  function del() {
+
+  }
 
 </script>
