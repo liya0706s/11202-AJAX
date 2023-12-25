@@ -57,7 +57,7 @@
                     </div>
                     <div class="mb-3 col-6">
                         <label for="status_code" class="form-label">畢業狀態</label>
-                        <input type="text" class="form-control" name="status_code" id="status_code">
+                        <input type="text" class="form-control" name="status_code" id="status_code" value="<?= $status_code ?? ''; ?>">
                     </div>
 
                     <?php
@@ -75,6 +75,3 @@
             <div class="modal-footer">
 
             </div>
-        </div>
-    </div>
-</div>

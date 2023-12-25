@@ -36,3 +36,4 @@ switch ($_GET['do']) {
         echo json_encode($classes);
         break;
 }
+?>
