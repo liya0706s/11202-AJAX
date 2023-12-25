@@ -4,5 +4,4 @@ include_once "db.php";
 $Student->save($_POST);
 to('../index.html');
 
-
 ?>
