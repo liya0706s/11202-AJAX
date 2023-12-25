@@ -3,6 +3,7 @@ include_once "db.php";
 //處理查詢資料的請求
 switch ($_GET['do']){
     case "all":
+        header('')
     echo json_encode($Student->all());
     break;
 }
