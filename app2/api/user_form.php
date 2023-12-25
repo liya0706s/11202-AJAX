@@ -55,13 +55,21 @@
 
                         </select>
                     </div>
-
                     <div class="mb-3 col-6">
                         <label for="status_code" class="form-label">畢業狀態</label>
                         <input type="text" class="form-control" name="status_code" id="status_code">
                     </div>
+
+                    <?php
+                    if(isset($_GET['id'])){
+                        echo "<input type='hidden' name='id' value='{$user['id']}'>";
+                    }
+                    ?>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-                    <button type="submit" class="btn btn-primary">確認新增</button>
+                    <button type="submit" class="btn btn-primary">
+                        <?= (isset($_GET['id']))?'編輯更新':'確認新增'; ?>
+                    </button>
+                    
                 </form>
             </div>
             <div class="modal-footer">
