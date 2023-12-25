@@ -162,7 +162,7 @@ function to($url)
 }
 
 $Student=new DB('students');
-
+$GraduateSchool=new DB('graduate_school');
 
 ?>
 
